@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Order</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>Place Order</h1>
+      
+          
+      <form th:action="@{/order}"
+         th:object="${menu}" method="POST">
+        Burger Quantity:
+  
+         <input type="text" th:field="*{menu[0][1]}" />    
+         <br/>
+         Fries @uantity:
+         <input type="text" th:field="*{menu[1][1]}" />     
+         <br/>
+         <input type="submit" value="order" />
+      </form>
+       
+      <br/>
+       
+      <!-- Check if errorMessage is not null and not empty -->
+       
+     
+       
+   </body>
+</html>
